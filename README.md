@@ -1,5 +1,5 @@
 # Fibonacci
-- フィボナッチ数をLinqPadなりにDumpしてみる
+- フィボナッチ数列をLinqPadなりにDumpしてみる
 - TODO
  - リファクタリング
- -  パフォーマンスUp
+ -  パフォーマンスUp(メモ化とかとか)
