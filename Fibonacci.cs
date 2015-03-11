@@ -1,21 +1,27 @@
 void Main()
 {
-	GetFibo().Take(10).Dump();
+	GetFibs(10).Dump();
 }
 
-// Define other methods and classes here
-
-public IEnumerable<int> GetFibo() 
+public static IEnumerable<int> GetFibs(int n)
 {
-	yield return 0;
-	yield return 1;
-	int i1 = 0;
-	int i2 = 1;
-	while (true) 
+	List<int> fibs = new List<int>();
+	for (int i = 0; i < n; i++)
 	{
-		int fibo = i1 + i2;
- 		i1 = i2;
-		i2 = fibo;
-		yield return fibo;	
+		fibs.Add(CalcFib(i));	
+	}
+	return fibs;
+}
+
+private static int CalcFib(int n)
+{
+	switch (n)
+	{
+		case 0:
+			return 0;
+		case 1:
+			return 1;
+		default:
+			return CalcFib(n - 2) + CalcFib(n - 1);
 	}
 }
